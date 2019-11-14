@@ -28,6 +28,11 @@ namespace testeMVC.Controllers
             return View();
         }
 
+        public IActionResult People(){
+            People p = new People("Alan", 37); 
+            return View(p);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
