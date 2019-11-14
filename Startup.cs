@@ -48,9 +48,9 @@ namespace testeMVC
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(name: "alan-toute",  pattern: "alan", defaults: new { controller = "Home", action = "People" });
+
             });
         }
     }
