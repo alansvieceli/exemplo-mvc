@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace testeMVC.Controllers
 {
-    //https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/routing?view=aspnetcore-3.0
+    //
     [Route("api/product")]
     public class ProductController : Controller
     {
@@ -10,6 +10,18 @@ namespace testeMVC.Controllers
       [HttpGet("{id:int}")]
       public int Get(int id){
         return id;
+      }
+
+      [HttpGet("path")]
+      public string Path(){
+        //HttpContext.Response.StatusCode = 404
+        return HttpContext.Request.Path;
+      }
+
+      [HttpGet("image")]
+      public IActionResult Image(){
+      const string img = "images/001.jpg";
+      return File(img, "image/jpg+xml");
       }
         
     }
