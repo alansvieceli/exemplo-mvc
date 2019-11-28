@@ -15,6 +15,7 @@ namespace testeMVC.Controllers
       [HttpGet("path")]
       public string Path(){
         //HttpContext.Response.StatusCode = 404
+        //HttpContext.Request.Query['param'] = 404
         return HttpContext.Request.Path;
       }
 
